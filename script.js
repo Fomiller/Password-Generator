@@ -15,6 +15,19 @@
 // THEN the password is either displayed in an alert or written to the page
 
 
+
+
+
+function check(){
+    var x = document.getElementById("myCheck").checked;
+    console.log(x);
+}
+
+
+
+
+
+function main(){
 // set length
 var setLength = prompt("how many characters would you like your password to be? \nIt must be at least 8 characters long, and no longer than 128 characters");
 
@@ -109,8 +122,9 @@ function generatePassword(){
     console.log(password);
     document.write(password);
 }
-// runs password function.
-            // side note what if i gave the function values such as generatePassword(length, lower, upper, number, special)...
-generatePassword()
+    // runs password function.
+                // side note what if i gave the function values such as generatePassword(length, lower, upper, number, special)...
+    generatePassword()
 
+}
 
