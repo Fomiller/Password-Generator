@@ -1,0 +1,15 @@
+body{
+    background-color: rgb(211, 218, 226);
+    font-family: 'Oxygen', 'Roboto', 'Roboto Mono', 'Open Sans', san serif;
+    /* font-family: 'Varela Round', ;
+    font-family: 'Roboto', ;
+    font-family: 'Open Sans', ;
+    font-family: 'Roboto Mono', ;
+    font-family: 'Tomorrow', ;
+    font-family: 'Roboto Slab', ;
+    font-family: 'Inconsolata', ; */
+}
+
+.nav{
+    background-color:#fa816e;
+}

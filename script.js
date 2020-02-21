@@ -14,42 +14,37 @@
 // WHEN the password is generated
 // THEN the password is either displayed in an alert or written to the page
 
-
-
-
+// // establish variables.
+var p;
 
 function check(){
-    var x = document.getElementById("myCheck").checked;
-    console.log(x);
+    // check length is greater than 8 and less than 128
+    if( len < 8 || len > 128){
+        confirm("Choose a number between 8 and 128.")
+    }else{
+        var len = document.getElementById("length").value;
+        var l = document.getElementById("lowerCase").checked;
+        var u = document.getElementById("upperCase").checked;
+        var n = document.getElementById("numbers").checked;
+        var s = document.getElementById("special").checked;
+        console.log(len)
+        console.log(l,u,n,s);
+        return p = [len,l,u,n,s]
+    }
 }
-
-
-
-
 
 function main(){
-// set length
-var setLength = prompt("how many characters would you like your password to be? \nIt must be at least 8 characters long, and no longer than 128 characters");
-
-// requires the correct input for the prompt to move on. 
-while( setLength < 8 || setLength > 128){
-        setLength = prompt("how many characters would you like your password to be? \nIt must be at least 8 characters long, and no longer than 128 characters");
-}
-// if the correct input is given then you can set your password parameters.
-if(setLength >= 8 && setLength <= 128 ){
-    // lowercase
-    var setLowerCase = confirm("click OK if you would like lower case letters in your password.")
-    console.log("lower = " + setLowerCase);
-    // uppercase
-    var setUpperCase = confirm("click OK if you would like upper case letters in your password.")
-    console.log("upper = " + setUpperCase);
-    // numbers
-    var setNumbers = confirm("click OK if you would like numbers in your password.")
-    console.log("numbers = " + setNumbers);
-    // special characters
-    var setSpecial = confirm("click OK if you would like special characters in your password.")
-    console.log("special = " + setSpecial);
-}
+    var setLength = p[0]
+    var setLowerCase = p[1]
+    var setUpperCase = p[2]
+    var setNumbers = p[3]
+    var setSpecial = p[4]
+    console.log("-------------");
+    console.log(setLength)
+    console.log(setLowerCase)
+    console.log(setUpperCase)
+    console.log(setNumbers)
+    console.log(setSpecial)
 
 // function to generate password given above values.
 function generatePassword(){
@@ -60,7 +55,7 @@ function generatePassword(){
     var lowerAlphabet = "abcdefghijklmnopqrstuvwxyz";
     var upperAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     var number = "0123456789";
-    var special = "!@#$%^&?<>"
+    var special = "!#$%&')*(+,-./:;=>?@[]^_`{|}~"
     var length = setLength;
     
     // checks if variables are true. If variables are true they are added to the parameter array.
@@ -82,27 +77,6 @@ function generatePassword(){
     }
     console.log("---------");
 
-
-    // function for testing if the parameters were true. ran into trouble when pushing to array because what is pushed does not match the value of x.
-
-            // function addParam(x){
-            //     if( x === setLowerCase && x === true){
-            //         parametersArray.push(lowerAlphabet)
-            //     }else if( x === setUpperCase && x === true){
-            //         parametersArray.push(upperAlphabet)
-            //     }else if( x === setNumbers && x === true){
-            //         parametersArray.push(numbers)
-            //     }else if( x === setSpecial && x === true){
-            //         parametersArray.push(special)
-            //     }
-            // }
-
-            // addParam(setLowerCase);
-            // addParam(setUpperCase);
-            // addParam(setNumbers);
-            // addParam(setSpecial);
-
-
     // logs the newely made parameters array after being pushed to
     console.log(parametersArray)
 
@@ -120,7 +94,8 @@ function generatePassword(){
     // joins characters in Password array to form a password
     var password = passwordArray.join("");
     console.log(password);
-    document.write(password);
+    document.getElementById("passField").innerHTML = password;
+    // document.write(password);
 }
     // runs password function.
                 // side note what if i gave the function values such as generatePassword(length, lower, upper, number, special)...

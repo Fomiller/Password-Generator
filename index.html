@@ -7,18 +7,58 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
-    <!-- Custom Javascript -->
-
-    <title>Document</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Oxygen|Roboto|Roboto+Mono|Roboto+Slab|Tomorrow|Varela+Round&display=swap" rel="stylesheet">    
+    <title>PassWord Generator</title>
 </head>
 <body>
+    <nav class="mb-5">
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+              <h1>Password Generator</h1>
+            </li>
+
+          </ul>
+    </nav>
     <div class="container">
-        <h1>Open Console.</h1>
-        <button onclick="check()">check input</button>
-        <!-- <button onclick="main()">Generate Password</button> -->
-        <br>
-        <input type="checkbox" id="myCheck">
+        <div class="row py-2">
+            <div class="col-sm-8 mx-auto">
+                <div class="inputs">
+                    <div class="length">
+                        <h2>Length</h2>
+                        <input type="number" id="length" name="quantity" min="8" max="128">
+                    </div>
+                    <div class="lower">
+                        <h2>Lower Case</h2>
+                        <input type="checkbox" id="lowerCase">
+                    </div>
+                    <div class="upper">
+                        <h2>Upper Case</h2>
+                        <input type="checkbox" id="upperCase">
+                    </div>
+                    <div class="num">
+                        <h2>Numbers</h2>
+                        <input type="checkbox" id="numbers">
+                    </div>
+                    <div class="special">
+                        <h2>Special</h2>
+                        <input type="checkbox" id="special">
+                    </div>
+                </div>
+            </div>
+        </div>
         
+        <div class="row py-5 text-center">
+            <div class="col">
+                <div>
+                    <button class="btn btn-danger" onclick="check(); main();">Generate Password</button>
+                </div>
+                <div>
+                    <h3>Your password: </h3>
+                    <h4 id="passField"></h4>
+                </div>
+            </div>
+        </div>
         
     </div>
     
