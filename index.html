@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Oxygen|Roboto|Roboto+Mono|Roboto+Slab|Tomorrow|Varela+Round&display=swap" rel="stylesheet">    
-    <title>PassWord Generator</title>
+    <title>Password Generator</title>
 </head>
 <body>
     <nav class="mb-5">
@@ -22,45 +22,71 @@
     </nav>
     <div class="container">
         <div class="row py-2">
-            <div class="col-sm-8 mx-auto">
+            <div class="col-md-6 mx-auto">
+                <div class="inputs mx-auto justify-content-center">
+                    <!-- <div class="length ilb"> -->
+                        <h3 class="ilb pr-3">Length</h3>
+                        <input class="form-control ilb" style="width: 25%" type="number" id="length" name="quantity" min="8" max="128">
+                    <!-- </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="row py-2">
+            <div class="col-sm-12 col-md-3 mx-auto">
                 <div class="inputs">
-                    <div class="length">
-                        <h2>Length</h2>
-                        <input type="number" id="length" name="quantity" min="8" max="128">
+                    <div class="lower ilb">
+                        <h3 class="ilb pr-3 py-2">Lower Case</h3>
+                        <input class="ilb" type="checkbox" id="lowerCase">
                     </div>
-                    <div class="lower">
-                        <h2>Lower Case</h2>
-                        <input type="checkbox" id="lowerCase">
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-3 mx-auto">
+                <div class="inputs">
+                    <div class="upper ilb">
+                        <h3 class="ilb pr-3 py-2">Upper Case</h3>
+                        <input class="ilb" type="checkbox" id="upperCase">
                     </div>
-                    <div class="upper">
-                        <h2>Upper Case</h2>
-                        <input type="checkbox" id="upperCase">
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-3 mx-auto">
+                <div class="inputs">
+                    <div class="num ilb">
+                        <h3 class="ilb pr-3 py-2">Numbers</h3>
+                        <input class="ilb" type="checkbox" id="numbers">
                     </div>
-                    <div class="num">
-                        <h2>Numbers</h2>
-                        <input type="checkbox" id="numbers">
-                    </div>
-                    <div class="special">
-                        <h2>Special</h2>
-                        <input type="checkbox" id="special">
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-3 mx-auto">
+                <div class="inputs">
+                    <div class="special ilb">
+                        <h3 class="ilb pr-3 py-2">Special</h3>
+                        <input class="ilb"type="checkbox" id="special">
                     </div>
                 </div>
             </div>
         </div>
-        
         <div class="row py-5 text-center">
             <div class="col">
                 <div>
-                    <button class="btn btn-danger" onclick="check(); main();">Generate Password</button>
+                    <button class="btn btn-danger my-3" onclick="check(); main();">Generate Password</button>
                 </div>
                 <div>
-                    <h3>Your password: </h3>
+                    <h3 class="mb-3">Your password:</h3>
                     <h4 id="passField"></h4>
+                    <textarea class="form-control text-center" id="passFieldArea" rows="1" cols="12"></textarea>
+                    <!-- <textarea class="text-center" id="passFieldArea" rows="1" cols="128" placeholder="Your Password"></textarea> -->
                 </div>
             </div>
         </div>
-        
+    <!-- End Container -->
     </div>
+    <!-- Footer -->
+    <footer class="footer mt-5 py-3 text-center fixed-bottom">
+        <div class="container">
+          <a href="https://github.com/Fomiller"><span>Forrest Miller 2020</span></a>
+        </div>
+    </footer>
+    
     
 
 

@@ -13,3 +13,15 @@ body{
 .nav{
     background-color:#fa816e;
 }
+
+.ilb{
+    display: inline-block;
+}
+footer a{
+    color:#dc3545;
+}
+
+footer a:hover{
+    text-decoration: none;
+    color: #a72633;
+}
